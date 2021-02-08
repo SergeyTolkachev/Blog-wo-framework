@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block main %}
+    <div class="col-12">
+        <h1 class="mt-5">Заполните форму для создания поста</h1>
+        <form class="form" action="http://blog.com/post/save" method="post">
+
+            <label class="form-label mb-0 mt-3" for="title">Заголовок:</label>
+            <input id="title" class="form-control m-1" type="text" name="title">
+
+            <label class="form-label mb-0 mt-3" for="text">Текст</label>
+            <textarea id="text" class="form-control m-1" name="text" rows="4"></textarea>
+
+            <button class="btn btn-primary m-1 mt-4" type="submit">Создать</button>
+        </form>
+    </div>
+{% endblock %}

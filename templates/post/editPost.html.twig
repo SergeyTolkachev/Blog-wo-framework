@@ -1,0 +1,12 @@
+{% extends'base.html.twig' %}
+{%  block main %}
+    <div class="col-12">
+        <h1 class="mt-5">Редактирование поста</h1>
+        <form action="http://blog.com/post/update" method="post">
+            <input type="text" name="id"  value="{{ post.id }}" hidden>
+            <input class="form-control m-1 mt-4" type="text" name="title" value="{{ post.title }}">
+            <textarea class="form-control m-1 mt-4" name="text">{{ post.text }}</textarea>
+            <button type="submit" class="btn btn-success m-1">Изменить</button>
+        </form>
+    </div>
+{% endblock %}

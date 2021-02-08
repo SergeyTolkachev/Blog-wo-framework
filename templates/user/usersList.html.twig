@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{% block main %}
+    <div class="col-12">
+        <h1 class="mt-5 mb-3">Список всех пользователей</h1>
+        <table class="col-12 mt-2">
+        {% for user in users %}
+            <tr>
+                <td><h5>{{ user.name }}</h5></td>
+                <td>
+                    <a href="http://blog.com/user/edit/{{ user.id }}" ><button type="button" class="btn btn-success">
+                       Редактировать</button></a>
+                    <a href="http://blog.com/user/delete/{{ user.id }}"><button type="button" class="btn btn-danger">
+                       Удалить</button></a>
+                </td>
+            </tr>
+        {% endfor %}
+        </table>
+        <a href="http://blog.com/user/create"><button class="btn btn-primary mt-3" type="button">Создать нового пользователя</button></a>
+    </div>
+{% endblock %}

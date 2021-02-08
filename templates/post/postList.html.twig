@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% block main %}
+    <div class="col-12">
+        <h1 class="mt-5 mb-3">Список всех постов</h1>
+        <table class="col-12 mt-2">
+        {% for post in posts %}
+            <tr>
+                <td><h5>{{ post.title }}</h5></td>
+                <td><h5>{{ post.text }}</h5></td>
+                <td>
+                    <a href="http://blog.com/post/edit/{{ post.id }}" ><button type="button" class="btn btn-success">
+                       Редактировать</button></a>
+                    <a href="http://blog.com/post/delete/{{ post.id }}"><button type="button" class="btn btn-danger">
+                       Удалить</button></a>
+                </td>
+            </tr>
+        {% endfor %}
+        </table>
+        <a href="http://blog.com/post/create"><button class="btn btn-primary mt-3" type="button">Создать новый пост</button></a>
+    </div>
+{% endblock %}
